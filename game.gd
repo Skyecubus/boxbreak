@@ -25,7 +25,7 @@ func _ready():
 		bricky += 100
 		
 	#brick.broke.connect(ball._on_brick_broke)
-	#brick.broke.connect(ball._on_brick_broke)
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
