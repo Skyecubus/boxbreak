@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://dt5yl3s0muqp"]
+
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_l2y0h"]
+[ext_resource type="Texture2D" uid="uid://c4u4orendr4of" path="res://blockSprite.jpeg" id="2_ckkho"]
+[ext_resource type="Texture2D" uid="uid://dk01e0l1i4jts" path="res://brick.jpeg" id="3_anvxk"]
+[ext_resource type="Script" path="res://brick.gd" id="3_tgj5x"]
+[ext_resource type="Script" path="res://ball.gd" id="4_d8dat"]
+[ext_resource type="Texture2D" uid="uid://0e0g73e28s31" path="res://ball.jpeg" id="5_pyfjy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogpxp"]
+size = Vector2(75, 38.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_we2wb"]
+radius = 5.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgv24"]
+size = Vector2(66, 40)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(288, 162)
+zoom = Vector2(2, 2)
+
+[node name="player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_l2y0h")
+
+[node name="Sprite2D" type="Sprite2D" parent="player"]
+position = Vector2(277, 298)
+scale = Vector2(0.253906, 0.226563)
+texture = ExtResource("2_ckkho")
+
+[node name="Area2D" type="Area2D" parent="player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/Area2D"]
+position = Vector2(276.5, 297.25)
+shape = SubResource("RectangleShape2D_ogpxp")
+
+[node name="ball" type="CharacterBody2D" parent="."]
+position = Vector2(139, 138)
+script = ExtResource("4_d8dat")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ball"]
+shape = SubResource("CircleShape2D_we2wb")
+
+[node name="Sprite2D" type="Sprite2D" parent="ball"]
+texture = ExtResource("5_pyfjy")
+
+[node name="brick" type="Area2D" parent="."]
+script = ExtResource("3_tgj5x")
+
+[node name="Sprite2D" type="Sprite2D" parent="brick"]
+position = Vector2(52.75, 38.75)
+scale = Vector2(0.255859, 0.324219)
+texture = ExtResource("3_anvxk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="brick"]
+position = Vector2(52.75, 38.75)
+shape = SubResource("RectangleShape2D_rgv24")
+
+[connection signal="collided" from="player" to="ball" method="_on_player_collided"]
+[connection signal="body_shape_entered" from="player/Area2D" to="ball" method="_on_area_2d_body_shape_entered"]
+[connection signal="body_shape_entered" from="brick" to="brick" method="_on_body_shape_entered"]
+[connection signal="broke" from="brick" to="ball" method="_on_brick_broke"]

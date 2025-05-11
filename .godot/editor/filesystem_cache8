@@ -1,0 +1,14 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1746977484
+ball.gd::GDScript::-1::1746873311::0::1::::<>CharacterBody2D<>::
+ball.jpeg::CompressedTexture2D::1764508965770509522::1746869585::1746869585::1::::<><>::
+blockSprite.jpeg::CompressedTexture2D::6851392081546774573::1746869494::1746869494::1::::<><>::
+brick.gd::GDScript::-1::1746872191::0::1::::<>Area2D<>::
+brick.jpeg::CompressedTexture2D::7914347047568433828::1746869588::1746869588::1::::<><>::
+brick.tscn::PackedScene::5212247077588271549::1746976143::0::1::::<><>::res://brick.gd<>uid://dk01e0l1i4jts::::res://brick.jpeg
+CharacterBody2D.gd::GDScript::-1::1746872528::0::1::::<>CharacterBody2D<>::
+game.gd::GDScript::-1::1746976141::0::1::::<>Node2D<>::
+icon.svg::CompressedTexture2D::3892624903377810469::1746868446::1746868453::1::::<><>::
+loseScreen.tscn::PackedScene::1024211620094478547::1746976143::0::1::::<><>::
+player.tscn::PackedScene::251654698941060911::1746976143::0::1::::<><>::res://CharacterBody2D.gd<>res://game.gd<>uid://c4u4orendr4of::::res://blockSprite.jpeg<>res://ball.gd<>uid://0e0g73e28s31::::res://ball.jpeg
+::res://breakbox/::1746977080
